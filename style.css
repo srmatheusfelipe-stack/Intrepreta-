@@ -1,0 +1,347 @@
+:root {
+    --bg-color: #f4f7fe;
+    --card-bg: #ffffff;
+    --text-main: #2b3674;
+    --text-muted: #a3aed1;
+    --primary: #4318FF;
+    --primary-hover: #3311db;
+    --shadow: 0px 18px 40px rgba(112, 144, 176, 0.12);
+    --radius: 20px;
+    --transition: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0b1437;
+    --card-bg: #111c44;
+    --text-main: #ffffff;
+    --text-muted: #8f9bba;
+    --primary: #7551FF;
+    --primary-hover: #4318FF;
+    --shadow: 0px 18px 40px rgba(0, 0, 0, 0.5);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Poppins', sans-serif; }
+
+body { background-color: var(--bg-color); color: var(--text-main); transition: var(--transition); min-height: 100vh; }
+
+.hidden { display: none !important; }
+
+/* --- LOGIN SCREEN --- */
+.login-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: var(--bg-color);
+    display: flex; justify-content: center; align-items: center; z-index: 1000;
+}
+.login-card {
+    background: var(--card-bg); padding: 40px; border-radius: var(--radius);
+    box-shadow: var(--shadow); text-align: center; max-width: 400px; width: 90%;
+}
+.login-card h1 { font-size: 2rem; margin-bottom: 10px; }
+.highlight { color: var(--primary); }
+.login-card p { color: var(--text-muted); margin-bottom: 30px; font-size: 0.9rem; }
+
+.input-group {
+    display: flex; align-items: center; background: var(--bg-color);
+    border-radius: 12px; padding: 10px 15px; margin-bottom: 20px; border: 1px solid transparent;
+}
+.input-group:focus-within { border-color: var(--primary); }
+.input-group span { color: var(--text-muted); margin-right: 10px; }
+.input-group input {
+    border: none; background: transparent; outline: none; width: 100%;
+    color: var(--text-main); font-size: 1rem;
+}
+
+.btn-primary {
+    background: var(--primary); color: white; border: none; width: 100%;
+    padding: 15px; border-radius: 12px; font-size: 1rem; font-weight: 600;
+    cursor: pointer; transition: var(--transition);
+}
+.btn-primary:hover { background: var(--primary-hover); }
+
+/* --- APP PRINCIPAL --- */
+.app-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+
+.main-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 30px; padding: 10px 0;
+}
+.icon-btn {
+    background: var(--card-bg); border: none; border-radius: 50%; width: 45px; height: 45px;
+    display: flex; justify-content: center; align-items: center; cursor: pointer;
+    color: var(--text-main); box-shadow: var(--shadow); transition: var(--transition);
+}
+.icon-btn:hover { transform: scale(1.05); }
+
+/* --- PERFIL --- */
+.profile-section {
+    background: var(--card-bg); padding: 25px; border-radius: var(--radius);
+    box-shadow: var(--shadow); margin-bottom: 30px;
+}
+.profile-info { display: flex; align-items: center; gap: 20px; }
+.avatar {
+    width: 60px; height: 60px; background: var(--primary); color: white;
+    border-radius: 50%; display: flex; justify-content: center; align-items: center; font-size: 2rem;
+}
+.profile-info h2 { font-size: 1.5rem; }
+.subtitle { color: var(--text-muted); font-size: 0.9rem; }
+
+/* --- CARDS --- */
+.section-title { margin-bottom: 20px; font-size: 1.2rem; }
+.cards-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+
+@media(min-width: 768px) { .cards-grid { grid-template-columns: 1fr 1fr; } }
+
+.course-card {
+    background: var(--card-bg); border-radius: var(--radius); overflow: hidden;
+    box-shadow: var(--shadow); cursor: pointer; transition: var(--transition);
+    display: flex; flex-direction: column;
+}
+.course-card:hover { transform: translateY(-5px); }
+.card-img { width: 100%; height: 180px; object-fit: cover; }
+.card-content { padding: 20px; display: flex; flex-direction: column; flex-grow: 1;}
+.card-content h3 { font-size: 1.2rem; margin-bottom: 8px; }
+.card-content p { color: var(--text-muted); font-size: 0.85rem; margin-bottom: 20px; flex-grow: 1;}
+
+.progress-wrapper { width: 100%; }
+.progress-stats { display: flex; justify-content: space-between; font-size: 0.8rem; font-weight: 600; margin-bottom: 5px;}
+.progress-bar { width: 100%; height: 8px; background: var(--bg-color); border-radius: 4px; overflow: hidden; }
+.progress-fill { height: 100%; background: var(--primary); width: 0%; border-radius: 4px; transition: width 0.5s ease; }
+
+/* =========================================================
+   ESTILOS EXCLUSIVOS DO QUIZ.HTML (DESIGN PROFISSIONAL)
+   ========================================================= */
+
+/* --- TELA DA LISTA DE MÓDULOS --- */
+.quiz-list-grid { 
+    display: grid; 
+    gap: 16px; 
+    margin-top: 20px;
+}
+
+.quiz-item {
+    background: var(--card-bg); 
+    padding: 20px 25px; 
+    border-radius: 16px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    box-shadow: var(--shadow); 
+    cursor: pointer; 
+    transition: var(--transition);
+    border-left: 6px solid var(--primary); /* Linha lateral marcando o módulo */
+    position: relative;
+    overflow: hidden;
+}
+
+.quiz-item:hover:not(.locked) { 
+    transform: translateY(-3px); 
+    box-shadow: 0px 20px 40px rgba(67, 24, 255, 0.2); /* Sombra mais vibrante */
+}
+
+.quiz-item.locked {
+    opacity: 0.6; 
+    cursor: not-allowed; 
+    border-left-color: var(--text-muted);
+    background: #e9ecef; /* Fundo mais cinza para mostrar que tá trancado */
+}
+
+/* Ajuste para o tema dark quando bloqueado */
+[data-theme="dark"] .quiz-item.locked {
+    background: #1a2035;
+}
+
+.quiz-item-title { 
+    font-weight: 600; 
+    font-size: 1.1rem; 
+    color: var(--text-main);
+}
+
+.quiz-status-icon { 
+    color: var(--primary); 
+    font-size: 1.8rem;
+}
+
+.locked .quiz-status-icon { 
+    color: var(--text-muted); 
+}
+
+/* --- TELA DO QUIZ ATIVO (As Perguntas) --- */
+.quiz-top-bar { 
+    margin-bottom: 25px; 
+    background: var(--card-bg);
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.quiz-top-bar span { 
+    font-size: 1rem; 
+    font-weight: 700; 
+    color: var(--primary); 
+    display: block; 
+    margin-bottom: 10px;
+}
+
+.mini-bar { height: 8px; border-radius: 4px; }
+
+.quiz-content-area {
+    background: var(--card-bg); 
+    padding: 25px; 
+    border-radius: 16px;
+    box-shadow: var(--shadow); 
+    margin-bottom: 25px;
+    text-align: center; /* Centraliza a imagem */
+}
+
+/* Imagem sem ficar estourada */
+#quizImage { 
+    max-width: 100%; 
+    max-height: 350px; 
+    object-fit: contain; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#quizText { 
+    font-size: 1.1rem; 
+    line-height: 1.7; 
+    text-align: justify; 
+    color: var(--text-main);
+}
+
+/* --- ÁREA DAS OPÇÕES (Corrigindo o bug da foto 2) --- */
+.question-area {
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.question-area h3 { 
+    font-size: 1.25rem; 
+    margin-bottom: 25px; 
+    color: var(--text-main);
+    line-height: 1.4;
+}
+
+/* --- FORÇANDO O DESIGN DOS BOTÕES DE OPÇÃO --- */
+.options-grid { 
+    display: flex !important; 
+    flex-direction: column !important; /* Força ficar um embaixo do outro */
+    gap: 15px !important; 
+    width: 100% !important;
+}
+
+.option-btn {
+    display: block !important;
+    width: 100% !important;
+    background-color: var(--bg-color) !important; 
+    border: 2px solid #cbd5e1 !important; /* Borda cinza clara padrão */
+    color: var(--text-main) !important;
+    padding: 18px 25px !important; 
+    border-radius: 12px !important; 
+    font-size: 1.1rem !important; 
+    text-align: left !important; 
+    cursor: pointer !important; 
+    transition: all 0.3s ease !important; 
+    font-weight: 500 !important;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05) !important;
+}
+
+.option-btn:hover:not(.disabled) { 
+    border-color: var(--primary) !important; 
+    background-color: #f8fafc !important;
+    transform: scale(1.02) !important; /* Efeito de pular pra frente */
+}
+
+/* Cores quando ACERTA */
+.option-btn.correct { 
+    background-color: #ecfdf5 !important; /* Fundo verde claro */
+    color: #047857 !important; /* Texto verde escuro */
+    border-color: #10b981 !important; /* Borda verde forte */
+    font-weight: 700 !important;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important; /* Brilho verde */
+}
+
+/* Cores quando ERRA */
+.option-btn.wrong { 
+    background-color: #fef2f2 !important; /* Fundo vermelho claro */
+    color: #b91c1c !important; /* Texto vermelho escuro */
+    border-color: #ef4444 !important; /* Borda vermelha forte */
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important; /* Brilho vermelho */
+}
+
+.option-btn.disabled { 
+    pointer-events: none !important; 
+    opacity: 0.7 !important;
+}
+
+/* --- TELA DE RESULTADOS --- */
+.result-screen { 
+    text-align: center; 
+    padding: 50px 20px; 
+    background: var(--card-bg); 
+    border-radius: 16px; 
+    box-shadow: var(--shadow); 
+}
+.result-emoji { font-size: 6rem; margin-bottom: 15px; animation: bounce 1.5s ease infinite; }
+.result-screen h2 { font-size: 2.2rem; margin-bottom: 15px; color: var(--primary); }
+.result-screen p { color: var(--text-muted); margin-bottom: 25px; font-size: 1.1rem; }
+.score-display { 
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    margin-bottom: 40px; 
+    background: var(--primary); 
+    color: white;
+    display: inline-block; 
+    padding: 15px 30px; 
+    border-radius: 30px;
+    box-shadow: 0 10px 20px rgba(67, 24, 255, 0.3);
+}
+
+@keyframes bounce { 
+    0%, 100% { transform: translateY(0); } 
+    50% { transform: translateY(-15px); } 
+}
+
+/* --- ÁREA DE FOTO DE PERFIL (LOGIN) --- */
+.profile-upload-container { 
+    text-align: center; 
+    margin-bottom: 20px; 
+}
+
+.upload-label {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%;
+    background: var(--bg-color); 
+    border: 2px dashed var(--primary);
+    display: inline-flex; 
+    justify-content: center; 
+    align-items: center;
+    cursor: pointer; 
+    color: var(--primary); 
+    overflow: hidden;
+    transition: var(--transition); 
+    margin: 0 auto;
+}
+
+.upload-label:hover { 
+    background: rgba(67, 24, 255, 0.1); 
+    transform: scale(1.05); 
+}
+
+/* Quando a foto é carregada, ela preenche o círculo */
+.upload-label img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+/* Imagem de perfil dentro do painel do app */
+#appAvatar img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    border-radius: 50%; 
+}

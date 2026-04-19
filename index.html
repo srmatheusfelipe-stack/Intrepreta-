@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interpreta + | Soberania através da Leitura</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="loginScreen" class="login-overlay active">
+        <div class="login-card" style="position: relative;">
+            
+            <button class="icon-btn" id="loginThemeToggleBtn" style="position: absolute; top: 15px; right: 15px; width: 40px; height: 40px; box-shadow: none; background: transparent;">
+                <span class="material-icons-round" id="loginThemeIcon">dark_mode</span>
+            </button>
+
+            <h1>Interpreta <span class="highlight">+</span></h1>
+            <p>Sua jornada de leitura crítica começa aqui.</p>
+            <div class="profile-upload-container">
+                <label for="profilePicInput" class="upload-label" id="uploadPreview" title="Adicionar Foto">
+                    <span class="material-icons-round">add_a_photo</span>
+                </label>
+                <input type="file" id="profilePicInput" accept="image/*" style="display: none;">
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 5px;">Foto opcional</p>
+            </div>
+            <div class="input-group">
+                <span class="material-icons-round">person</span>
+                <input type="text" id="usernameInput" placeholder="Digite seu nome para começar..." autocomplete="off">
+            </div>
+            <button id="enterAppBtn" class="btn-primary">Entrar no App</button>
+        </div>
+    </div>
+
+    <div id="mainApp" class="app-container hidden">
+        <header class="main-header">
+            <div class="header-left">
+                <button class="icon-btn" id="themeToggleBtn" title="Mudar Tema">
+                    <span class="material-icons-round" id="themeIcon">dark_mode</span>
+                </button>
+            </div>
+            <h1 class="logo">Interpreta <span class="highlight">+</span></h1>
+            <div class="header-right">
+                <button class="icon-btn" id="logoutBtn" title="Sair da Conta">
+                    <span class="material-icons-round">logout</span>
+                </button>
+            </div>
+        </header>
+
+        <section class="profile-section">
+            <div class="profile-info">
+               
+               <div class="profile-info">
+                <div class="avatar" id="appAvatar"><span class="material-icons-round">face</span></div>
+                <div>
+                    <h2 id="displayUsername">Olá, Viajante</h2>
+                    <p class="subtitle">Pronto para treinar sua interpretação?</p>
+                </div>
+            </div>
+        </section>
+
+        <main class="content-section">
+            <h3 class="section-title">Trilhas de Aprendizagem</h3>
+            
+            <div id="cardsContainer" class="cards-grid">
+                </div>
+        </main>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

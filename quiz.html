@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz | Interpreta +</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        
+        <header class="main-header">
+            <button class="icon-btn" id="backBtn">
+    <span class="material-icons-round">arrow_back</span>
+</button>
+            <h1 class="logo" id="headerTitle">Carregando...</h1>
+            <div style="width: 45px;"></div> </header>
+
+        <main id="quizListView" class="content-section">
+            <div class="progress-wrapper" style="margin-bottom: 20px;">
+                <div class="progress-stats">
+                    <span>Progresso da Seção</span>
+                    <span id="sectionProgressText">0/10</span>
+                </div>
+                <div class="progress-bar">
+                    <div id="sectionProgressBar" class="progress-fill" style="width: 0%"></div>
+                </div>
+            </div>
+            
+            <div class="quiz-list-grid" id="quizListContainer">
+                </div>
+        </main>
+
+        <main id="activeQuizView" class="content-section hidden">
+            <div class="quiz-top-bar">
+                <span id="questionCounter">Pergunta 1 de 6</span>
+                <div class="progress-bar mini-bar">
+                    <div id="quizProgressBar" class="progress-fill" style="width: 16%"></div>
+                </div>
+            </div>
+
+            <div class="quiz-content-area">
+                <div id="mediaContainer" class="hidden">
+                    <img id="quizImage" src="" alt="Imagem do Quiz">
+                </div>
+                <div id="textContainer" class="hidden">
+                    <p id="quizText"></p>
+                </div>
+            </div>
+
+            <div class="question-area">
+                <h3 id="questionText">Texto da pergunta aqui?</h3>
+                <div class="options-grid" id="optionsContainer">
+                    </div>
+            </div>
+        </main>
+
+        <main id="resultView" class="content-section hidden result-screen">
+            <div class="result-emoji" id="resultEmoji">🏆</div>
+            <h2 id="resultTitle">Excelente!</h2>
+            <p id="resultMessage">Você destruiu nesse quiz.</p>
+            <div class="score-display">
+                Acertos: <span id="scoreText">0/0</span>
+            </div>
+            <button class="btn-primary" id="btnNextAction">Continuar Jornada</button>
+        </main>
+
+    </div>
+
+    <script src="data.js"></script>
+    <script src="quiz.js"></script>
+</body>
+</html>
