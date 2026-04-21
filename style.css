@@ -26,7 +26,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
 
 .hidden { display: none !important; }
 
-/* --- LOGIN SCREEN --- */
+//
 .login-overlay {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: var(--bg-color);
@@ -56,10 +56,8 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     padding: 15px; border-radius: 12px; font-size: 1rem; font-weight: 600;
     cursor: pointer; transition: var(--transition);
 }
-.btn-primary:hover { background: var(--primary-hover); }
-
-/* --- APP PRINCIPAL --- */
-.app-container { max-width: 900px; margin: 0 auto; padding: 20px; }
+   .btn-primary:hover { background: var(--primary-hover); }
+    .app-container { max-width: 900px; margin: 0 auto; padding: 20px; }
 
 .main-header {
     display: flex; justify-content: space-between; align-items: center;
@@ -72,7 +70,6 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
 }
 .icon-btn:hover { transform: scale(1.05); }
 
-/* --- PERFIL --- */
 .profile-section {
     background: var(--card-bg); padding: 25px; border-radius: var(--radius);
     box-shadow: var(--shadow); margin-bottom: 30px;
@@ -85,7 +82,9 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
 .profile-info h2 { font-size: 1.5rem; }
 .subtitle { color: var(--text-muted); font-size: 0.9rem; }
 
-/* --- CARDS --- */
+
+
+
 .section-title { margin-bottom: 20px; font-size: 1.2rem; }
 .cards-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
 
@@ -107,11 +106,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
 .progress-bar { width: 100%; height: 8px; background: var(--bg-color); border-radius: 4px; overflow: hidden; }
 .progress-fill { height: 100%; background: var(--primary); width: 0%; border-radius: 4px; transition: width 0.5s ease; }
 
-/* =========================================================
-   ESTILOS EXCLUSIVOS DO QUIZ.HTML (DESIGN PROFISSIONAL)
-   ========================================================= */
 
-/* --- TELA DA LISTA DE MÓDULOS --- */
 .quiz-list-grid { 
     display: grid; 
     gap: 16px; 
@@ -128,24 +123,23 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     box-shadow: var(--shadow); 
     cursor: pointer; 
     transition: var(--transition);
-    border-left: 6px solid var(--primary); /* Linha lateral marcando o módulo */
+    border-left: 6px solid var(--primary); 
     position: relative;
     overflow: hidden;
 }
 
 .quiz-item:hover:not(.locked) { 
     transform: translateY(-3px); 
-    box-shadow: 0px 20px 40px rgba(67, 24, 255, 0.2); /* Sombra mais vibrante */
+    box-shadow: 0px 20px 40px rgba(67, 24, 255, 0.2); 
 }
 
 .quiz-item.locked {
     opacity: 0.6; 
     cursor: not-allowed; 
     border-left-color: var(--text-muted);
-    background: #e9ecef; /* Fundo mais cinza para mostrar que tá trancado */
-}
+    background: #e9ecef; 
 
-/* Ajuste para o tema dark quando bloqueado */
+
 [data-theme="dark"] .quiz-item.locked {
     background: #1a2035;
 }
@@ -165,7 +159,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     color: var(--text-muted); 
 }
 
-/* --- TELA DO QUIZ ATIVO (As Perguntas) --- */
+
 .quiz-top-bar { 
     margin-bottom: 25px; 
     background: var(--card-bg);
@@ -190,10 +184,10 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     border-radius: 16px;
     box-shadow: var(--shadow); 
     margin-bottom: 25px;
-    text-align: center; /* Centraliza a imagem */
+    text-align: center;
 }
 
-/* Imagem sem ficar estourada */
+
 #quizImage { 
     max-width: 100%; 
     max-height: 350px; 
@@ -209,7 +203,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     color: var(--text-main);
 }
 
-/* --- ÁREA DAS OPÇÕES (Corrigindo o bug da foto 2) --- */
+
 .question-area {
     background: var(--card-bg);
     padding: 25px;
@@ -223,20 +217,17 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     color: var(--text-main);
     line-height: 1.4;
 }
-
-/* --- FORÇANDO O DESIGN DOS BOTÕES DE OPÇÃO --- */
 .options-grid { 
     display: flex !important; 
-    flex-direction: column !important; /* Força ficar um embaixo do outro */
+    flex-direction: column !important;
     gap: 15px !important; 
-    width: 100% !important;
+      width: 100% !important;
 }
-
-.option-btn {
+    .option-btn {
     display: block !important;
     width: 100% !important;
     background-color: var(--bg-color) !important; 
-    border: 2px solid #cbd5e1 !important; /* Borda cinza clara padrão */
+    border: 2px solid #cbd5e1 !important;
     color: var(--text-main) !important;
     padding: 18px 25px !important; 
     border-radius: 12px !important; 
@@ -251,24 +242,23 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
 .option-btn:hover:not(.disabled) { 
     border-color: var(--primary) !important; 
     background-color: #f8fafc !important;
-    transform: scale(1.02) !important; /* Efeito de pular pra frente */
+    transform: scale(1.02) !important; 
 }
 
-/* Cores quando ACERTA */
+
 .option-btn.correct { 
-    background-color: #ecfdf5 !important; /* Fundo verde claro */
-    color: #047857 !important; /* Texto verde escuro */
-    border-color: #10b981 !important; /* Borda verde forte */
+    background-color: #ecfdf5 !important; 
+    color: #047857 !important; 
+    border-color: #10b981 !important; 
     font-weight: 700 !important;
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important; /* Brilho verde */
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4) !important; 
 }
 
-/* Cores quando ERRA */
 .option-btn.wrong { 
-    background-color: #fef2f2 !important; /* Fundo vermelho claro */
-    color: #b91c1c !important; /* Texto vermelho escuro */
-    border-color: #ef4444 !important; /* Borda vermelha forte */
-    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important; /* Brilho vermelho */
+    background-color: #fef2f2 !important; 
+    color: #b91c1c !important; 
+    border-color: #ef4444 !important; 
+    box-shadow: 0 0 15px rgba(239, 68, 68, 0.4) !important;
 }
 
 .option-btn.disabled { 
@@ -276,7 +266,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     opacity: 0.7 !important;
 }
 
-/* --- TELA DE RESULTADOS --- */
+
 .result-screen { 
     text-align: center; 
     padding: 50px 20px; 
@@ -304,7 +294,7 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     50% { transform: translateY(-15px); } 
 }
 
-/* --- ÁREA DE FOTO DE PERFIL (LOGIN) --- */
+
 .profile-upload-container { 
     text-align: center; 
     margin-bottom: 20px; 
@@ -331,14 +321,14 @@ body { background-color: var(--bg-color); color: var(--text-main); transition: v
     transform: scale(1.05); 
 }
 
-/* Quando a foto é carregada, ela preenche o círculo */
+
 .upload-label img { 
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
 }
 
-/* Imagem de perfil dentro do painel do app */
+
 #appAvatar img { 
     width: 100%; 
     height: 100%; 
