@@ -111,12 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
         usernameInput.value = '';
         
        
-        localStorage.removeItem('interpretaUserPic');
-        tempPicData = null;
-        if (uploadPreview) {
-            uploadPreview.innerHTML = `<span class="material-icons-round">add_a_photo</span>`;
-        }
-
+    
         checkLogin();
     });
     function loadCards() {
